@@ -114,6 +114,8 @@ public class FluxTransformingTests {
         new Player("Michael", "Jordan"), 
         new Player("Scottie", "Pippen"), 
         new Player("Steve", "Kerr"));
+    
+    playerFlux.subscribe(System.out::println);
 
     StepVerifier.create(playerFlux)
         .expectNextMatches(p -> playerList.contains(p))
